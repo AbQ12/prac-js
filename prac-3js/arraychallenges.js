@@ -47,5 +47,4 @@ teaTypes[1] = "jasmine tea";
      let softcopies = popularTea;
 
 
-      
-     
+    
