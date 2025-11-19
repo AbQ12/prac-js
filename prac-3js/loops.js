@@ -77,6 +77,6 @@ stores each city in a new array named citylist */
 // let citylist = [];
 
 // for (let i = 0; i < cities.length ; i++) {
-//     citylist.push(cities[i]);
+//     citylist.push(cities[i]); 
 // }
 // console.log("cities are", citylist);
