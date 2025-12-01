@@ -35,7 +35,7 @@ Array.prototype.abq = function(){
  */
 //classes 
 
-class vehicle {
+/* class vehicle {
     constructor(make, model, varient){
         this.make = make;
         this.model = model;
@@ -44,10 +44,10 @@ class vehicle {
    start(){
     return `${this.model} car from ${this.make} `;
    }
-}
+} */
 // inheritance
 
-class car extends vehicle{
+/* class car extends vehicle{
     drive(){
         return `${this.make} : this is an inheritance eg`;
     }
@@ -58,5 +58,20 @@ let mycar = new car("toyota", "fortuner" , "gr" );
 
 let vehOne = new vehicle("honda", "civic", "oreal");
 console.log(vehOne.make);
+ */
 
+// Encpsulation(restricting direct access to data object or object data)
+
+class bankacc{
+    #balance = 0;
+    deposit(ammount){
+        this.#balance += ammount;
+        return this.#balance;
+    }
+  getbalance(){
+    return `${this.#balance}`;
+  }
+}
+let account = new bankacc();
+console.log(account.getbalance());
 
