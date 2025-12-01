@@ -62,7 +62,7 @@ console.log(vehOne.make);
 
 // Encpsulation(restricting direct access to data object or object data)
 
-class bankacc{
+/* class bankacc{
     #balance = 0;
     deposit(ammount){
         this.#balance += ammount;
@@ -74,4 +74,51 @@ class bankacc{
 }
 let account = new bankacc();
 console.log(account.getbalance());
+ */
 
+
+// Abstaaction(hide the complex things behind the scene)
+
+/* class coffeemec{
+   // call db
+   //filter
+   start(){
+       return `starting the mechine`;
+}
+brewCoffee(){
+    return `coffee is brewing`
+    }
+}
+let mymechine = new coffeemec();
+console.log(mymechine.start(),mymechine.brewCoffee()); */
+
+//polymorphism the abulity ofsometing to have or to be displayed in more than one form
+
+/* class bird{
+    fly(){
+        return `flying...`;
+    }
+}
+class penguin extends bird{
+    fly(){
+        return `penguin cant fly...`;
+    }
+}
+
+let birds = new bird()
+let penguins = new penguin()
+console.log(birds.fly(),penguins.fly());
+
+//static method this method can only be called by the class
+
+class calculator{
+    static add(a,b){
+        return a+b;
+    }
+}
+
+let minicalc = new calculator();
+console.log(calculator.add(2,3));
+ */
+
+// getter and setter
