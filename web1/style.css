@@ -1,0 +1,439 @@
+/* Basic Reset and Variables */
+:root {
+    --primary-color: #59ab6e; /* Zay Shop Green */
+    --secondary-color: #3f684c; /* Darker Green */
+    --dark-bg: #212934; /* Footer/Dark background */
+    --light-text: #cacaca;
+    --main-font: 'Arial', sans-serif;
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* --- 1. Header/Navbar Styles --- */
+
+.top-bar {
+    background: #eee; /* Top bar background */
+    height: 40px;
+    /* (You'd add content like contact info and social media here) */
+}
+
+.navbar {
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #555;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-icons a {
+    color: #333;
+    font-size: 18px;
+    margin-left: 15px;
+    position: relative;
+}
+
+.nav-icons .badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* --- Utility/Reusable Styles --- */
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.btn-go-shop {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+}
+
+/* --- 2. Hero/Slider Section --- */
+
+.hero-slider {
+    background: #f7f7f7;
+    position: relative;
+    padding: 60px 0;
+    overflow: hidden; /* To keep the image container clean */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    width: 45%;
+    padding-right: 20px;
+}
+
+.hero-text h1 {
+    font-size: 64px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 200;
+}
+
+.hero-text p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.hero-image {
+    width: 50%;
+    /* The image itself would be styled to fit and be centered */
+}
+
+/* Slider Controls (Simplified) */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.1);
+    color: #fff;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.slider-arrow.prev { left: 10px; }
+.slider-arrow.next { right: 10px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: var(--primary-color);
+}
+
+/* --- 3. Categories Section --- */
+
+.categories-section {
+    padding: 60px 0;
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.category-item {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.category-image {
+    width: 100%;
+    height: 200px; /* Example fixed height for image area */
+    border-radius: 50%;
+    background: #eee; /* Placeholder for image */
+    margin-bottom: 20px;
+    overflow: hidden;
+    /* You would use background-image or an <img> tag here */
+}
+
+.category-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- 4. Featured Products Section --- */
+
+.featured-section {
+    background: #f7f7f7;
+    padding: 60px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.product-image {
+    height: 200px; /* Example fixed height for image */
+    background: #eee; /* Placeholder */
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.product-info h4 {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.product-info .ratings {
+    color: gold;
+    margin-bottom: 5px;
+}
+
+.product-info .fa-star.checked {
+    color: var(--primary-color); /* The green color for filled stars */
+}
+
+.product-info .product-desc {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.product-info .reviews {
+    display: block;
+    font-size: 13px;
+    color: #999;
+    float: left;
+}
+
+.product-info .price {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+    float: right;
+}
+
+/* --- 5. Footer Styles --- */
+
+.footer {
+    background: var(--dark-bg);
+    color: var(--light-text);
+}
+
+.footer-grid {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-grid h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-grid ul li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.footer-grid ul li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 15px;
+    text-align: center;
+}
+
+.footer-grid a {
+    transition: color 0.3s;
+}
+
+.footer-grid a:hover {
+    color: var(--primary-color);
+}
+
+.footer-social-email {
+    padding: 20px 0;
+    border-top: 1px solid #3d4653;
+}
+
+.social-email-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    display: inline-block;
+    background: #3d4653;
+    color: white;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+}
+
+.email-subscribe input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 250px;
+}
+
+.email-subscribe button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    margin-left: -5px; /* Pull button flush with input */
+}
+
+.footer-copyright {
+    background: #1c232d;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.footer-copyright a {
+    color: #eee;
+}
+
+/* --- Responsive Adjustments (Simplified) --- */
+
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text, .hero-image {
+        width: 100%;
+    }
+    .hero-image {
+        margin-top: 30px;
+    }
+    .category-list, .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .social-email-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
