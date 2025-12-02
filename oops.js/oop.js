@@ -122,3 +122,32 @@ console.log(calculator.add(2,3));
  */
 
 // getter and setter
+/* class Person {
+    constructor(name, age) {
+        this._name = name;   // underscore means "private-like"
+        this._age = age;
+    }
+
+    // Getter
+    get age() {
+        return this._age;
+    }
+
+    // Setter
+    set age(value) {
+        if (value < 0) {
+            console.log("Age cannot be negative");
+            return;
+        }
+        this._age = value;
+    }
+}
+
+let p = new Person("Ali", 20);
+
+console.log(p.age);   // getter → 20
+
+p.age = 25;           // setter updates value
+console.log(p.age);   // 25
+
+p.age = -5;           // setter blocks invalid value */
