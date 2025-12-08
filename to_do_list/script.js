@@ -5,9 +5,9 @@ const taskButton = document.getElementById('add-task-btn');
 const todoList = document.getElementById('todo-list');
 
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-tasks.forEach(task => renderTask(task));
+tasks.forEach((task) => renderTask(task));
 
 taskButton.addEventListener('click',function(){
     const taskText = todoInput.value.trim()
@@ -36,24 +36,34 @@ taskButton.addEventListener('click',function(){
 });
 
 function renderTask(task){
-    console.log(task.text);
-    const li = document.createElement('li')
-    li.setAttribute('data-id',task.id)
-    if(task.completed) li.classList.add('completed')
+  const li = document.createElement('li');
+    li.setAttribute('data-id', task.id);
+
+    if (task.completed) li.classList.add('completed');
+
     li.innerHTML = `
-    <span>${task.text}</span>
-    <button>delete</delete>`;
-    li.addEventListener('click',(e)=>{
-        if(e.target.tagName === 'BUTTON') return;
+        <span>${task.text}</span>
+        <button>delete</button>
+    `;
+
+    // Toggle complete when li (not button) is clicked
+    li.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') return; // ignore button clicks
         task.completed = !task.completed;
         li.classList.toggle('completed');
         saveTasks();
+    });
+    li.querySelector('button').addEventListener('click',(e)=>{
+        e.stopPropagation(); //prevent tiggle from firing
+        tasks = tasks.filter(t => t.id !== task.id);
+        li.remove();
+        saveTasks();
     })
 
-    todoList.appendChild(li);
-    
-}
 
+   todoList.appendChild(li);
+   
+}
 function saveTasks(){
     localStorage.setItem('tasks',JSON.stringify(tasks))
 }
