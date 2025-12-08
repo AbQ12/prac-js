@@ -30,6 +30,7 @@ taskButton.addEventListener('click',function(){
         completed : false
     }] */
     saveTasks();
+    renderTask(newTask);
     todoInput.value = "";//to clear the input
     console.log(tasks);
     
