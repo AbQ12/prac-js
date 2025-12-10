@@ -40,7 +40,7 @@ function renderTask(task){
   const li = document.createElement('li');
     li.setAttribute('data-id', task.id);
 
-    if (task.completed) li.classList.add('completed');
+    if (task.completed) {li.classList.add('completed')};
 
     li.innerHTML = `
         <span>${task.text}</span>
